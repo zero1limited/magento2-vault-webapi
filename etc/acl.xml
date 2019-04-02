@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+    <acl>
+        <resources>
+            <resource id="Magento_Backend::admin">
+                <resource id="Zero1_VaultWebApi::vault_all" title="Vault" sortOrder="20">
+                    <resource id="Zero1_VaultWebApi::vault_payment_methods" title="Payment Methods" sortOrder="10" />
+                    <resource id="Zero1_VaultWebApi::vault_payment_tokens" title="Payment Tokens" sortOrder="20">
+                        <resource id="Zero1_VaultWebApi::vault_payment_tokens_get" title="Get" sortOrder="10"/>
+                        <resource id="Zero1_VaultWebApi::vault_payment_tokens_update" title="Update" sortOrder="20"/>
+                        <resource id="Zero1_VaultWebApi::vault_payment_tokens_create" title="Create" sortOrder="30"/>
+                        <resource id="Zero1_VaultWebApi::vault_payment_tokens_delete" title="Delete" sortOrder="40"/>
+                    </resource>
+                </resource>
+            </resource>
+        </resources>
+    </acl>
+</config>

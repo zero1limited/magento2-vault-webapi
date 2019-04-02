@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Webapi:etc/webapi.xsd">
+
+    <!-- payment methods -->
+    <route url="/V1/vault/paymentMethodList/:storeId" method="GET">
+        <service class="Zero1\VaultWebApi\Api\PaymentMethodListInterface" method="getList"/>
+        <resources>
+            <resource ref="Zero1_VaultWebApi::vault_payment_methods" />
+        </resources>
+    </route>
+    <route url="/V1/vault/activePaymentMethodList/:storeId" method="GET">
+        <service class="Zero1\VaultWebApi\Api\PaymentMethodListInterface" method="getActiveList"/>
+        <resources>
+            <resource ref="Zero1_VaultWebApi::vault_payment_methods" />
+        </resources>
+    </route>
+
+    <!-- payment tokens -->
+    <route url="/V1/vault/paymentToken" method="GET">
+        <service class="Magento\Vault\Api\PaymentTokenRepositoryInterface" method="getList"/>
+        <resources>
+            <resource ref="Zero1_VaultWebApi::vault_payment_tokens_get" />
+        </resources>
+    </route>
+
+    <route url="/V1/vault/paymentToken/:entityId" method="GET">
+        <service class="Magento\Vault\Api\PaymentTokenRepositoryInterface" method="getById"/>
+        <resources>
+            <resource ref="Zero1_VaultWebApi::vault_payment_tokens_get" />
+        </resources>
+    </route>
+
+    <route url="/V1/vault/paymentToken/:entityId" method="DELETE">
+        <service class="Zero1\VaultWebApi\Api\PaymentTokenRepositoryInterface" method="deleteById"/>
+        <resources>
+            <resource ref="Zero1_VaultWebApi::vault_payment_tokens_delete" />
+        </resources>
+    </route>
+
+    <route url="/V1/vault/paymentToken" method="PUT">
+        <service class="Zero1\VaultWebApi\Api\PaymentTokenRepositoryInterface" method="create"/>
+        <resources>
+            <resource ref="Zero1_VaultWebApi::vault_payment_tokens_create" />
+        </resources>
+    </route>
+
+    <route url="/V1/vault/paymentToken/:entityId" method="POST">
+        <service class="Zero1\VaultWebApi\Api\PaymentTokenRepositoryInterface" method="updateById"/>
+        <resources>
+            <resource ref="Zero1_VaultWebApi::vault_payment_tokens_update" />
+        </resources>
+    </route>
+</routes>
