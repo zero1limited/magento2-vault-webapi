@@ -19,5 +19,5 @@
     "mdoq/module-connector": "Enables you to connect to the Mdoq platform (https://www.mdoq.io)"
   },
   "type": "magento2-module",
-  "version": "1.0.0"
+  "version": "1.0.1"
 }
