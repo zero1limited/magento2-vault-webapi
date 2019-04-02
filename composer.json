@@ -8,7 +8,7 @@
     }
   },
   "description": "A Magento 2 module to expose rest api endpoints that allow vault tokens to be imported.",
-  "name": "zero1/valut-web-api",
+  "name": "zero1/vault-web-api",
   "require": {
   },
   "support": {
